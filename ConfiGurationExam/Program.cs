@@ -4,14 +4,15 @@ var app = builder.Build();
 
 app.UseStaticFiles();
 app.UseRouting();
-
-app.UseEndpoints(endpoints =>
-    endpoints.Map("/", async context =>
-    {
-       //await context.Response.WriteAsync(app.Configuration["MyKey"]);
-       await context.Response.WriteAsync(app.Configuration.GetValue<string>("MyKey"));
-    })
-);
+app.MapControllers();
+//app.UseEndpoints(endpoints =>
+//    endpoints.Map("/", async context =>
+//    {
+//       //await context.Response.WriteAsync(app.Configuration["MyKey"]);
+//       await context.Response.WriteAsync(app.Configuration["DataJson:ClientId"]);
+        
+//    })
+//);
 
 
 
